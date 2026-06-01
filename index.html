@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advogado Criminalista | Consulta Gratuita</title>
+  <meta name="description"
+    content="Advogado criminalista experiente. Defesa penal agressiva e resultados comprovados. Ligue agora para uma consulta gratuita." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #1a3a5c;
+      --blue-lt: #2a5298;
+      --slate: #2d3748;
+      --gray: #718096;
+      --light: #f7fafc;
+      --white: #ffffff;
+      --gold: #c9a84c;
+      --border: #e2e8f0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--slate);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .nav-logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--slate);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue-lt) !important;
+      color: var(--white) !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--slate);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--blue) 0%, #0d2240 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 2rem 4rem;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201, 168, 76, 0.15);
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge::before {
+      content: '⚖';
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #1a1a1a;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .stat {}
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    /* Contact card in hero */
+    .hero-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--blue);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--slate);
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--slate);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      padding: 0.85rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+
+    .form-submit:hover {
+      background: var(--blue-lt);
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--gray);
+      margin-top: 0.75rem;
+    }
+
+    /* ── SECTION SHARED ── */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-lt);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--blue);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--gray);
+      max-width: 600px;
+    }
+
+    .section-head {
+      margin-bottom: 3rem;
+    }
+
+    /* ── TRUST BAR ── */
+    #trust {
+      background: var(--light);
+      padding: 2.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .trust-icon {
+      font-size: 1.5rem;
+    }
+
+    .trust-text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--blue);
+      font-size: 0.95rem;
+    }
+
+    .trust-text span {
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
+    /* ── PRACTICE AREAS ── */
+    #practice {
+      background: var(--white);
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .area-card {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      cursor: default;
+    }
+
+    .area-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 8px 32px rgba(26, 58, 92, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .area-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(26, 58, 92, 0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .area-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--blue);
+      margin-bottom: 0.6rem;
+    }
+
+    .area-card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--light);
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img {
+      width: 100%;
+      border-radius: 16px;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--gold);
+      color: #1a1a1a;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-badge strong {
+      display: block;
+      font-size: 1.8rem;
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+    }
+
+    .about-badge span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .about-text .section-title {
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+      color: var(--gray);
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .credentials {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .credential {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .credential-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      margin-top: 0.4rem;
+      flex-shrink: 0;
+    }
+
+    .credential p {
+      font-size: 0.92rem;
+      color: var(--slate);
+      margin: 0;
+    }
+
+    /* ── PROCESS ── */
+    #process {
+      background: var(--white);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      counter-reset: steps;
+    }
+
+    .step {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 2.75rem;
+      right: -1rem;
+      width: 2rem;
+      height: 2px;
+      background: var(--border);
+    }
+
+    .step-num {
+      width: 56px;
+      height: 56px;
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0 auto 1.25rem;
+    }
+
+    .step h3 {
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .step p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      background: var(--light);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .review-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .review-stars {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.1em;
+    }
+
+    .review-text {
+      font-size: 0.93rem;
+      color: var(--slate);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-lt) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--blue);
+    }
+
+    .author-case {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    /* ── CTA BAND ── */
+    #cta {
+      background: linear-gradient(135deg, var(--blue) 0%, #0d2240 100%);
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    #cta .section-title {
+      color: var(--white);
+    }
+
+    #cta p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--light);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--blue);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-weight: 600;
+      color: var(--blue);
+      font-size: 0.9rem;
+    }
+
+    .contact-item span {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .contact-form-wrap {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    }
+
+    .contact-form-wrap h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--blue);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-form-wrap>p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0a1929;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 3rem 2rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand .nav-logo {
+      margin-bottom: 0.75rem;
+      background: var(--white);
+      border-radius: 8px;
+      padding: 4px 8px;
+      display: inline-flex;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      max-width: 300px;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-col a {
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .disclaimer {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.35);
+      margin-top: 1rem;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+
+    /* ── TOAST ── */
+    #toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #22543d;
+      color: #fff;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      transform: translateY(120%);
+      transition: transform 0.4s ease;
+      z-index: 999;
+    }
+
+    #toast.show {
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        display: none;
+      }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .about-badge {
+        right: 1rem;
+      }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .step:nth-child(2)::after {
+        display: none;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        padding: 0 1.25rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        padding: 1.5rem;
+        gap: 1.25rem;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .step::after {
+        display: none;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <img src="San%20Diego%20Logotipo.jpeg" alt="San Diego Advogado" />
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#practice">Áreas de Atuação</a></li>
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#testimonials">Resultados</a></li>
+      <li><a href="#contact" class="nav-cta">Consulta Gratuita</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">Defesa Criminal · Brasil</div>
+        <h1 class="hero-title">
+          Defesa Agressiva.<br />
+          <em>Resultados Comprovados.</em>
+        </h1>
+        <p class="hero-sub">
+          Quando sua liberdade e seu futuro estão em jogo, você precisa de um lutador ao seu lado. Oferecemos defesa
+          criminal incansável em todo o território nacional.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Consulta Gratuita</a>
+          <a href="tel:+5511999990000" class="btn-outline">📞 (11) 99999-0000</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Casos Ganhos</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">15+</div>
+            <div class="stat-label">Anos de Experiência</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">Disponível</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulário rápido (somente desktop) -->
+      <div class="hero-card">
+        <h3>Análise Gratuita do Caso</h3>
+        <p>Sem compromisso. Totalmente confidencial.</p>
+        <form id="hero-form" onsubmit="handleForm(event)">
+          <div class="form-group">
+            <label>Nome Completo</label>
+            <input type="text" placeholder="João Silva" required />
+          </div>
+          <div class="form-group">
+            <label>Telefone / WhatsApp</label>
+            <input type="tel" placeholder="(11) 99999-0000" required />
+          </div>
+          <div class="form-group">
+            <label>Tipo de Caso</label>
+            <select>
+              <option value="">Selecione o crime...</option>
+              <option>Embriaguez ao Volante (Lei Seca)</option>
+              <option>Tráfico ou Posse de Drogas</option>
+              <option>Lesão Corporal / Agressão</option>
+              <option>Crime Federal</option>
+              <option>Violência Doméstica</option>
+              <option>Furto / Roubo</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <button type="submit" class="form-submit">Solicitar Consulta Gratuita →</button>
+          <p class="form-note">🔒 Sigilo profissional garantido pela OAB</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- BARRA DE CONFIANÇA -->
+  <div id="trust">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <div class="trust-icon">⚖️</div>
+        <div class="trust-text">
+          <strong>Inscrito na OAB</strong>
+          <span>Regular &amp; Ativo</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🏅</div>
+        <div class="trust-text">
+          <strong>Advogado Destaque</strong>
+          <span>Avaliações 5 estrelas no Jusbrasil</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📍</div>
+        <div class="trust-text">
+          <strong>Atuação Nacional</strong>
+          <span>Varas, TJ e Tribunais Federais</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🕐</div>
+        <div class="trust-text">
+          <strong>Disponível 24h/7</strong>
+          <span>Ligamos — não deixamos no vácuo</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">💬</div>
+        <div class="trust-text">
+          <strong>Consulta Gratuita</strong>
+          <span>Sem honorários antecipados</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ÁREAS DE ATUAÇÃO -->
+  <section id="practice">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">O que Defendemos</div>
+        <h2 class="section-title">Áreas de Atuação em Direito Penal</h2>
+        <p class="section-sub">De contravenções a crimes graves, defendemos clientes em todas as esferas da Justiça
+          Criminal brasileira.</p>
+      </div>
+      <div class="areas-grid">
+        <div class="area-card">
+          <div class="area-icon">🚗</div>
+          <h3>Embriaguez ao Volante (Lei Seca)</h3>
+          <p>Impugnação do etilômetro, nulidade da abordagem, suspensão da CNH e audiências de custódia. Defendemos sua
+            habilitação e liberdade.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">💊</div>
+          <h3>Tráfico e Posse de Drogas</h3>
+          <p>Posse para uso próprio, tráfico e associação criminosa. Exploramos nulidades na busca e apreensão e
+            alternativas à prisão.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🏛️</div>
+          <h3>Crimes Federais (TRF)</h3>
+          <p>Lavagem de dinheiro, fraude licitatória, tráfico transnacional e crimes cibernéticos. Casos federais exigem
+            experiência nos TRFs.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🤝</div>
+          <h3>Lesão Corporal e Agressão</h3>
+          <p>Da lesão leve ao crime doloso. Analisamos legítima defesa, credibilidade das testemunhas e excesso da
+            acusação.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🏠</div>
+          <h3>Violência Doméstica (Lei Maria da Penha)</h3>
+          <p>Prisão não significa culpa. Contestamos medidas protetivas, depoimentos e lutamos pelo seu direito de
+            permanecer em casa.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🔍</div>
+          <h3>Furto e Roubo</h3>
+          <p>Do furto simples ao roubo qualificado. Questionamos reconhecimento, dolo e vícios constitucionais na coleta
+            de provas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-img-wrap">
+          <img src="profile_photo.jpeg" alt="Dr. San Diego — Advogado Criminalista" class="about-img" />
+          <div class="about-badge">
+            <strong>15+</strong>
+            <span>Anos nos<br />Tribunais Brasileiros</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="section-label">Sobre o Escritório</div>
+          <h2 class="section-title">Um Lutador ao Seu Lado</h2>
+          <p>
+            No nosso escritório, acreditamos que toda pessoa merece uma defesa técnica e rigorosa, independentemente das
+            acusações. Dedicamos mais de 15 anos à proteção dos direitos de cidadãos em todo o Brasil.
+          </p>
+          <p>
+            Conhecemos os fóruns, os juízes e os promotores. Esse conhecimento interno — aliado a uma preparação
+            incansável — dá aos nossos clientes uma vantagem real quando mais importa.
+          </p>
+          <div class="credentials">
+            <div class="credential">
+              <div class="credential-dot"></div>
+              <p>Ex-assessor do Ministério Público — sabemos como a acusação pensa</p>
+            </div>
+            <div class="credential">
+              <div class="credential-dot"></div>
+              <p>Membro do Instituto Brasileiro de Ciências Criminais (IBCCRIM)</p>
+            </div>
+            <div class="credential">
+              <div class="credential-dot"></div>
+              <p>Especialista em Direito Penal e Processual Penal — OAB/SP</p>
+            </div>
+            <div class="credential">
+              <div class="credential-dot"></div>
+              <p>Reconhecido no Jusbrasil e Google com avaliações 5 estrelas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section id="process">
+    <div class="container">
+      <div class="section-head" style="text-align:center">
+        <div class="section-label">Como Funciona</div>
+        <h2 class="section-title">Sua Defesa, Passo a Passo</h2>
+        <p class="section-sub" style="margin:0 auto">Tornamos o processo claro e sem estresse desde o primeiro contato.
+        </p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Consulta Gratuita</h3>
+          <p>Ligue ou preencha o formulário. Analisamos seu caso com total sigilo, sem compromisso e sem custo.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Investigação do Caso</h3>
+          <p>Analisamos todas as provas, boletins de ocorrência e depoimentos para identificar falhas na acusação.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Estratégia de Defesa</h3>
+          <p>Desenvolvemos uma estratégia sob medida — nulidades, negociação ou defesa plena em julgamento.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Lutamos por Você</h3>
+          <p>Atuamos em audiências, negociamos com a promotoria e defendemos incansavelmente até a resolução do caso.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">Resultados de Clientes</div>
+        <h2 class="section-title">O que Nossos Clientes Dizem</h2>
+        <p class="section-sub">Resultados reais para pessoas reais. Nomes alterados para preservar a privacidade.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Fui autuado pela Lei Seca e achei que minha vida tinha acabado. Eles identificaram
+            irregularidades na calibração do etilômetro e o processo foi arquivado. Não tenho palavras para agradecer."
+          </p>
+          <div class="review-author">
+            <div class="author-avatar">MR</div>
+            <div>
+              <div class="author-name">Miguel R.</div>
+              <div class="author-case">Lei Seca — Processo Arquivado</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Respondia a processo por tráfico com pena de 10 anos. Após meses de trabalho,
+            conseguiram uma solução que me manteve em liberdade. Lutaram como se fosse a própria vida deles."</p>
+          <div class="review-author">
+            <div class="author-avatar">JT</div>
+            <div>
+              <div class="author-name">José T.</div>
+              <div class="author-case">Tráfico de Drogas — Liberdade Mantida</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Acusado de violência doméstica — completamente falso. Desmontaram a versão da
+            acusadora ponto a ponto. Processo encerrado. Minha família continua unida. Sou eternamente grato."</p>
+          <div class="review-author">
+            <div class="author-avatar">DC</div>
+            <div>
+              <div class="author-name">Daniel C.</div>
+              <div class="author-case">Violência Doméstica — Caso Encerrado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAIXA CTA -->
+  <section id="cta">
+    <div class="container">
+      <div class="section-label" style="color:rgba(201,168,76,0.9)">O Tempo É Crucial</div>
+      <h2 class="section-title">Não Enfrente Isso Sozinho</h2>
+      <p>Cada hora conta após uma prisão. Quanto antes começarmos sua defesa, maiores suas chances. Entre em contato
+        agora — é gratuito e confidencial.</p>
+      <div class="cta-actions">
+        <a href="#contact" class="btn-primary">Consulta Gratuita</a>
+        <a href="tel:+5511999990000" class="btn-outline">Ligar (11) 99999-0000</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div>
+          <div class="section-label">Entre em Contato</div>
+          <h2 class="section-title">Fale Conosco Hoje</h2>
+          <p class="section-sub">Entre em contato a qualquer hora — dia ou noite. Todas as consultas são estritamente
+            confidenciais.</p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <strong>Telefone / WhatsApp</strong>
+                <span><a href="tel:+5511999990000" style="color:inherit;text-decoration:none;">(11)
+                    99999-0000</a></span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📧</div>
+              <div>
+                <strong>E-mail</strong>
+                <span>contato@advogadocriminalista.com.br</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <strong>Escritório</strong>
+                <span>Av. Paulista, 1000, Sala 1401<br />São Paulo, SP — 01310-100</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🕐</div>
+              <div>
+                <strong>Horário</strong>
+                <span>Seg–Sex 8h–18h · Plantão 24h para emergências</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h3>Enviar Mensagem</h3>
+          <p>Respondemos em até 2 horas durante o horário comercial.</p>
+          <form id="contact-form" onsubmit="handleForm(event)">
+            <div class="form-group">
+              <label>Nome Completo</label>
+              <input type="text" placeholder="Seu nome completo" required />
+            </div>
+            <div class="form-group">
+              <label>Telefone / WhatsApp</label>
+              <input type="tel" placeholder="(11) 99999-0000" required />
+            </div>
+            <div class="form-group">
+              <label>E-mail</label>
+              <input type="email" placeholder="voce@email.com" required />
+            </div>
+            <div class="form-group">
+              <label>Tipo de Crime</label>
+              <select>
+                <option value="">Selecione...</option>
+                <option>Embriaguez ao Volante (Lei Seca)</option>
+                <option>Tráfico ou Posse de Drogas</option>
+                <option>Lesão Corporal / Agressão</option>
+                <option>Crime Federal</option>
+                <option>Violência Doméstica</option>
+                <option>Furto / Roubo</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Descrição Breve</label>
+              <textarea placeholder="Conte-nos brevemente o que aconteceu..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Enviar Mensagem →</button>
+            <p class="form-note">🔒 Protegido pelo sigilo profissional da OAB</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">
+          <img src="San%20Diego%20Logotipo.jpeg" alt="San Diego Advogado" />
+        </a>
+        <p>Defesa criminal técnica e agressiva em todo o território nacional. A sua liberdade merece ser defendida.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Áreas de Atuação</h4>
+        <ul>
+          <li><a href="#practice">Embriaguez ao Volante</a></li>
+          <li><a href="#practice">Tráfico e Posse de Drogas</a></li>
+          <li><a href="#practice">Crimes Federais (TRF)</a></li>
+          <li><a href="#practice">Lesão Corporal</a></li>
+          <li><a href="#practice">Violência Doméstica</a></li>
+          <li><a href="#practice">Furto e Roubo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="#about">Sobre o Escritório</a></li>
+          <li><a href="#process">Como Funciona</a></li>
+          <li><a href="#testimonials">Resultados</a></li>
+          <li><a href="#contact">Consulta Gratuita</a></li>
+          <li><a href="tel:+5511999990000">Ligar (11) 99999-0000</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclaimer">
+      As informações contidas neste site têm caráter meramente informativo e não constituem aconselhamento jurídico.
+      Nenhuma relação de cliente-advogado é formada pela simples visita a este site. Resultados passados não garantem
+      resultados futuros. &copy; 2026 Advogado Criminalista. Todos os direitos reservados.
+    </div>
+    <div class="footer-bottom" style="margin-top:1.5rem">
+      <span>&copy; 2026 Advogado Criminalista. Todos os direitos reservados.</span>
+      <span>Inscrito na OAB — Ordem dos Advogados do Brasil</span>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div id="toast">✅ Mensagem enviada! Entraremos em contato em breve.</div>
+
+  <script>
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    // Sticky nav shadow
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').style.boxShadow = window.scrollY > 10 ? '0 2px 16px rgba(0,0,0,0.08)' : 'none';
+    });
+
+    // Form handler (demo)
+    function handleForm(e) {
+      e.preventDefault();
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+      e.target.reset();
+    }
+  </script>
+</body>
+
+</html>
