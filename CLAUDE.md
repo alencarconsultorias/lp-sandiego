@@ -22,7 +22,9 @@ Hosted on Vercel via `vercel.json` as a static site. To preview locally, open `i
 ## Key Details
 
 - Form submissions are **demo-only** — `handleForm()` just shows a toast; there is no backend integration yet.
-- Phone number: `+55 (12) 9 8848-1288` | Email: `contato@sandiegoadvogado.com.br` — these are the real client contacts, already set in the HTML.
+- The attorney is a criminal defense specialist (advogado criminalista); all copy and practice areas should stay framed around Direito Penal.
+- **WhatsApp is the primary contact channel** — number `+55 12 98848-1288`. CTAs throughout the page link to `https://wa.me/5512988481288` (not `tel:`) with a pre-filled message. Keep new CTAs consistent with this.
+- Email: `contato@sandiegoadvogado.com.br` — real client contact, already set in the HTML.
 - Logo: `logo-site-sandiego.png` (navbar and footer).
 - The attorney photo section (`about-img-placeholder`) is a placeholder — it should be replaced with a real `<img>` when a photo is available.
 - Responsive breakpoints: `900px` (tablet) and `640px` (mobile).
