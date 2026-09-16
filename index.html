@@ -906,27 +906,6 @@
       }
     }
 
-    /* ── TOAST ── */
-    #toast {
-      position: fixed;
-      bottom: 2rem;
-      left: 2rem;
-      background: #22543d;
-      color: #fff;
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      transform: translateY(120%);
-      transition: transform 0.4s ease;
-      z-index: 999;
-    }
-
-    #toast.show {
-      transform: translateY(0);
-    }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hero-inner {
@@ -1462,9 +1441,6 @@
     </svg>
   </a>
 
-  <!-- TOAST -->
-  <div id="toast">✅ Mensagem enviada! Entraremos em contato em breve.</div>
-
   <script>
     // Mobile nav toggle
     const hamburger = document.getElementById('hamburger');
@@ -1480,9 +1456,6 @@
     // Form handler (demo)
     function handleForm(e) {
       e.preventDefault();
-      const toast = document.getElementById('toast');
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 4000);
       e.target.reset();
     }
   </script>
