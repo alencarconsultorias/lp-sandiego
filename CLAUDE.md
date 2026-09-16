@@ -8,12 +8,12 @@ Static landing page (`index.html`) for a Brazilian criminal defense law firm, wr
 
 ## Architecture
 
-Everything lives in a single `index.html` file:
-- CSS is inlined in `<style>` within `<head>`
-- JavaScript is inlined in `<script>` at the bottom of `<body>`
-- No build step, no package manager, no framework — edit and open directly in a browser
+Three plain files, no build step, no package manager, no framework — edit and open `index.html` directly in a browser:
+- `index.html` — markup only, links `styles.css` in `<head>` and `script.js` at the bottom of `<body>`
+- `styles.css` — all styling
+- `script.js` — all behavior (mobile nav toggle, sticky nav shadow, form handler)
 
-CSS custom properties (design tokens) are defined in `:root` at the top of the `<style>` block — always use these variables (`--blue`, `--gold`, `--slate`, etc.) rather than hardcoded values.
+CSS custom properties (design tokens) are defined in `:root` at the top of `styles.css` — always use these variables (`--blue`, `--gold`, `--slate`, etc.) rather than hardcoded values.
 
 ## Deployment
 
@@ -21,7 +21,7 @@ Hosted on Vercel via `vercel.json` as a static site. To preview locally, open `i
 
 ## Key Details
 
-- Form submissions are **demo-only** — `handleForm()` just shows a toast; there is no backend integration yet.
+- Form submissions are **demo-only** — `handleForm()` (in `script.js`) just resets the form; there is no backend integration yet.
 - The attorney is a criminal defense specialist (advogado criminalista); all copy and practice areas should stay framed around Direito Penal.
 - **WhatsApp is the primary contact channel** — number `+55 12 98848-1288`. CTAs throughout the page link to `https://wa.me/5512988481288` (not `tel:`) with a pre-filled message. Keep new CTAs consistent with this.
 - Email: `contato@sandiegoadvogado.com.br` — real client contact, already set in the HTML.
