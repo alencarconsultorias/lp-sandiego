@@ -7,6 +7,39 @@
   <title>Advogado Criminalista | Consulta Gratuita</title>
   <meta name="description"
     content="Advogado criminalista experiente. Defesa penal agressiva e resultados comprovados. Ligue agora para uma consulta gratuita." />
+  <!-- Open Graph / Twitter Card — og:image e twitter:image usam caminho relativo; troque por URL absoluta quando o domínio de produção estiver confirmado -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Advogado Criminalista | Consulta Gratuita" />
+  <meta property="og:description"
+    content="Advogado criminalista experiente. Defesa penal agressiva e resultados comprovados. Fale agora pelo WhatsApp para uma consulta gratuita." />
+  <meta property="og:image" content="logo-site-sandiego.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Advogado Criminalista | Consulta Gratuita" />
+  <meta name="twitter:description"
+    content="Advogado criminalista experiente. Defesa penal agressiva e resultados comprovados." />
+  <meta name="twitter:image" content="logo-site-sandiego.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Attorney",
+    "name": "San Diego Advogado",
+    "description": "Advogado criminalista especializado em Direito Penal, com atuação em todo o território nacional.",
+    "image": "logo-site-sandiego.png",
+    "telephone": "+5512988481288",
+    "email": "sandiegoadv12@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Paulista, 1000, Sala 1401",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "postalCode": "01310-100",
+      "addressCountry": "BR"
+    },
+    "areaServed": "BR",
+    "priceRange": "Consulta gratuita"
+  }
+  </script>
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16" />
   <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32" />
@@ -24,7 +57,7 @@
   <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-logo">
-      <img src="logo-site-sandiego.png" alt="San Diego Advogado" />
+      <img src="logo-site-sandiego.png" alt="San Diego Advogado" width="176" height="44" />
     </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#practice">Áreas de Atuação</a></li>
@@ -32,7 +65,7 @@
       <li><a href="#testimonials">Resultados</a></li>
       <li><a href="#contact" class="nav-cta">Consulta Gratuita</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -77,16 +110,16 @@
         <p>Sem compromisso. Totalmente confidencial.</p>
         <form id="hero-form" onsubmit="handleForm(event)">
           <div class="form-group">
-            <label>Nome Completo</label>
-            <input type="text" placeholder="João Silva" required />
+            <label for="hero-nome">Nome Completo</label>
+            <input type="text" id="hero-nome" name="nome" placeholder="João Silva" required />
           </div>
           <div class="form-group">
-            <label>Telefone / WhatsApp</label>
-            <input type="tel" placeholder="(11) 99999-0000" required />
+            <label for="hero-telefone">Telefone / WhatsApp</label>
+            <input type="tel" id="hero-telefone" name="telefone" placeholder="(11) 99999-0000" required />
           </div>
           <div class="form-group">
-            <label>Tipo de Caso</label>
-            <select>
+            <label for="hero-tipo">Tipo de Caso</label>
+            <select id="hero-tipo" name="tipo">
               <option value="">Selecione o crime...</option>
               <option>Embriaguez ao Volante (Lei Seca)</option>
               <option>Tráfico ou Posse de Drogas</option>
@@ -108,35 +141,35 @@
   <div id="trust">
     <div class="trust-inner">
       <div class="trust-item">
-        <div class="trust-icon">⚖️</div>
+        <div class="trust-icon" aria-hidden="true">⚖️</div>
         <div class="trust-text">
           <strong>Inscrito na OAB</strong>
           <span>Regular &amp; Ativo</span>
         </div>
       </div>
       <div class="trust-item">
-        <div class="trust-icon">🏅</div>
+        <div class="trust-icon" aria-hidden="true">🏅</div>
         <div class="trust-text">
           <strong>Advogado Destaque</strong>
           <span>Avaliações 5 estrelas no Jusbrasil</span>
         </div>
       </div>
       <div class="trust-item">
-        <div class="trust-icon">📍</div>
+        <div class="trust-icon" aria-hidden="true">📍</div>
         <div class="trust-text">
           <strong>Atuação Nacional</strong>
           <span>Varas, TJ e Tribunais Federais</span>
         </div>
       </div>
       <div class="trust-item">
-        <div class="trust-icon">🕐</div>
+        <div class="trust-icon" aria-hidden="true">🕐</div>
         <div class="trust-text">
           <strong>Disponível 24h/7</strong>
           <span>Ligamos — não deixamos no vácuo</span>
         </div>
       </div>
       <div class="trust-item">
-        <div class="trust-icon">💬</div>
+        <div class="trust-icon" aria-hidden="true">💬</div>
         <div class="trust-text">
           <strong>Consulta Gratuita</strong>
           <span>Sem honorários antecipados</span>
@@ -156,37 +189,37 @@
       </div>
       <div class="areas-grid">
         <div class="area-card">
-          <div class="area-icon">🚗</div>
+          <div class="area-icon" aria-hidden="true">🚗</div>
           <h3>Embriaguez ao Volante (Lei Seca)</h3>
           <p>Impugnação do etilômetro, nulidade da abordagem, suspensão da CNH e audiências de custódia. Defendemos sua
             habilitação e liberdade.</p>
         </div>
         <div class="area-card">
-          <div class="area-icon">💊</div>
+          <div class="area-icon" aria-hidden="true">💊</div>
           <h3>Tráfico e Posse de Drogas</h3>
           <p>Posse para uso próprio, tráfico e associação criminosa. Exploramos nulidades na busca e apreensão e
             alternativas à prisão.</p>
         </div>
         <div class="area-card">
-          <div class="area-icon">🏛️</div>
+          <div class="area-icon" aria-hidden="true">🏛️</div>
           <h3>Crimes Federais (TRF)</h3>
           <p>Lavagem de dinheiro, fraude licitatória, tráfico transnacional e crimes cibernéticos. Casos federais exigem
             experiência nos TRFs.</p>
         </div>
         <div class="area-card">
-          <div class="area-icon">🤝</div>
+          <div class="area-icon" aria-hidden="true">🤝</div>
           <h3>Lesão Corporal e Agressão</h3>
           <p>Da lesão leve ao crime doloso. Analisamos legítima defesa, credibilidade das testemunhas e excesso da
             acusação.</p>
         </div>
         <div class="area-card">
-          <div class="area-icon">🏠</div>
+          <div class="area-icon" aria-hidden="true">🏠</div>
           <h3>Violência Doméstica (Lei Maria da Penha)</h3>
           <p>Prisão não significa culpa. Contestamos medidas protetivas, depoimentos e lutamos pelo seu direito de
             permanecer em casa.</p>
         </div>
         <div class="area-card">
-          <div class="area-icon">🔍</div>
+          <div class="area-icon" aria-hidden="true">🔍</div>
           <h3>Furto e Roubo</h3>
           <p>Do furto simples ao roubo qualificado. Questionamos reconhecimento, dolo e vícios constitucionais na coleta
             de provas.</p>
@@ -343,7 +376,7 @@
             confidenciais.</p>
           <div class="contact-info">
             <div class="contact-item">
-              <div class="contact-icon">💬</div>
+              <div class="contact-icon" aria-hidden="true">💬</div>
               <div>
                 <strong>WhatsApp</strong>
                 <span><a
@@ -353,21 +386,21 @@
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">📧</div>
+              <div class="contact-icon" aria-hidden="true">📧</div>
               <div>
                 <strong>E-mail</strong>
                 <span>sandiegoadv12@gmail.com</span>
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">📍</div>
+              <div class="contact-icon" aria-hidden="true">📍</div>
               <div>
                 <strong>Escritório</strong>
                 <span>Av. Paulista, 1000, Sala 1401<br />São Paulo, SP — 01310-100</span>
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">🕐</div>
+              <div class="contact-icon" aria-hidden="true">🕐</div>
               <div>
                 <strong>Horário</strong>
                 <span>Seg–Sex 8h–18h · Plantão 24h para emergências</span>
@@ -381,20 +414,20 @@
           <p>Respondemos em até 2 horas durante o horário comercial.</p>
           <form id="contact-form" onsubmit="handleForm(event)">
             <div class="form-group">
-              <label>Nome Completo</label>
-              <input type="text" placeholder="Seu nome completo" required />
+              <label for="contact-nome">Nome Completo</label>
+              <input type="text" id="contact-nome" name="nome" placeholder="Seu nome completo" required />
             </div>
             <div class="form-group">
-              <label>Telefone / WhatsApp</label>
-              <input type="tel" placeholder="(11) 99999-0000" required />
+              <label for="contact-telefone">Telefone / WhatsApp</label>
+              <input type="tel" id="contact-telefone" name="telefone" placeholder="(11) 99999-0000" required />
             </div>
             <div class="form-group">
-              <label>E-mail</label>
-              <input type="email" placeholder="voce@email.com" required />
+              <label for="contact-email">E-mail</label>
+              <input type="email" id="contact-email" name="email" placeholder="voce@email.com" required />
             </div>
             <div class="form-group">
-              <label>Tipo de Crime</label>
-              <select>
+              <label for="contact-tipo">Tipo de Crime</label>
+              <select id="contact-tipo" name="tipo">
                 <option value="">Selecione...</option>
                 <option>Embriaguez ao Volante (Lei Seca)</option>
                 <option>Tráfico ou Posse de Drogas</option>
@@ -406,8 +439,9 @@
               </select>
             </div>
             <div class="form-group">
-              <label>Descrição Breve</label>
-              <textarea placeholder="Conte-nos brevemente o que aconteceu..."></textarea>
+              <label for="contact-mensagem">Descrição Breve</label>
+              <textarea id="contact-mensagem" name="mensagem"
+                placeholder="Conte-nos brevemente o que aconteceu..."></textarea>
             </div>
             <button type="submit" class="form-submit">Enviar Mensagem →</button>
             <p class="form-note">🔒 Protegido pelo sigilo profissional da OAB</p>
@@ -422,7 +456,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="#hero" class="nav-logo">
-          <img src="logo-site-sandiego.png" alt="San Diego Advogado" />
+          <img src="logo-site-sandiego.png" alt="San Diego Advogado" width="176" height="44" />
         </a>
         <p>Defesa criminal técnica e agressiva em todo o território nacional. A sua liberdade merece ser defendida.</p>
       </div>
